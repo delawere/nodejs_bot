@@ -1,13 +1,13 @@
 const telegraf = require('telegraf');
 const cron = require('cron');
-const dotenv = require('dotenv');
 const Rates = require('./Rates/index.js');
 const Weather = require('./Weather/index.js');
 
-const { config } = dotenv;
 const { CronJob } = cron;
 const { Telegraf } = telegraf;
-const { parsed: { TG_BOT_TOKEN: TOKEN, WEATHER_TOKEN } } = config();
+
+const TOKEN = '1040795017:AAFEZnfyP4-RsqlZWbXJl5UAOW-v0sRFmbg';
+const WEATHER_TOKEN = '905c7ffe3e2629ee95b7f5385c8237fb';
 
 const bot = new Telegraf(TOKEN);
 
