@@ -1,0 +1,28 @@
+{
+  "name": "nodejs_telegram_bot",
+  "version": "1.0.0",
+  "description": "Daily Notification Bot on NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "Dmitriy Zhiganov",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/runtime": "^7.10.2",
+    "cron": "^1.8.2",
+    "dayjs": "^1.8.28",
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.0",
+    "telegraf": "^3.38.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "babel-loader": "^8.1.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.21.2"
+  }
+}
