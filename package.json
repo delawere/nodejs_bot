@@ -4,7 +4,7 @@
   "description": "Daily Notification Bot on NodeJS",
   "main": "index.js",
   "scripts": {
-    "build": "node src/index.js"
+    "start": "node src/index.js"
   },
   "author": "Dmitriy Zhiganov",
   "license": "ISC",
