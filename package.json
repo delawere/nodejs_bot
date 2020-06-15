@@ -6,6 +6,9 @@
   "scripts": {
     "start": "node src/index.js"
   },
+  "engines": {
+    "node": "14.4.0"
+  },
   "author": "Dmitriy Zhiganov",
   "license": "ISC",
   "dependencies": {
