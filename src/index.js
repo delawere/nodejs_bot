@@ -1,13 +1,13 @@
 import telegraf from 'telegraf';
 import cron from 'cron';
+import dotenv from 'dotenv';
 import Rates from './Rates/index.js';
 import Weather from './Weather/index.js';
 
+const { parsed: { TOKEN, WEATHER_TOKEN } } = dotenv.config();
+
 const { CronJob } = cron;
 const { Telegraf } = telegraf;
-
-const TOKEN = '1040795017:AAFEZnfyP4-RsqlZWbXJl5UAOW-v0sRFmbg';
-const WEATHER_TOKEN = '905c7ffe3e2629ee95b7f5385c8237fb';
 
 const bot = new Telegraf(TOKEN);
 
@@ -16,7 +16,7 @@ const getRate = ({ from, to }) => Rates.getRate(from, to);
 
 bot.start((ctx) => {
   const job = new CronJob(
-    '00 35 9 * * *',
+    '00 00 9 * * *',
     async () => {
       const { description, temp, feelsLike } = await getWeather();
       const { first_name: username } = ctx.from;
