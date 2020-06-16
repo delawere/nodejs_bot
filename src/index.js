@@ -6,12 +6,12 @@ import Weather from './Weather/index.js';
 
 const expressApp = express();
 
-expressApp.get('/', (req, res) => {
-  res.send('Hello World!');
+expressApp.get('/', (_, res) => {
+  res.send('I\'m alive!');
 });
 
-expressApp.listen(3000, () => {
-  console.log('Example app listening on port 3000!');
+expressApp.listen(process.env.PORT, () => {
+  console.log('Webpage for NodeJS Daily Bot listening on port 3000');
 });
 
 const { CronJob } = cron;
