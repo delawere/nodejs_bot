@@ -1,7 +1,18 @@
 import telegraf from 'telegraf';
 import cron from 'cron';
+import express from 'express';
 import Rates from './Rates/index.js';
 import Weather from './Weather/index.js';
+
+const expressApp = express();
+
+expressApp.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+expressApp.listen(3000, () => {
+  console.log('Example app listening on port 3000!');
+});
 
 const { CronJob } = cron;
 const { Telegraf } = telegraf;
