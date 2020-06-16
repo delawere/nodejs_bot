@@ -1,17 +1,14 @@
 import telegraf from 'telegraf';
 import cron from 'cron';
-import dotenv from 'dotenv';
 import Rates from './Rates/index.js';
 import Weather from './Weather/index.js';
-
-const { parsed: { TOKEN, WEATHER_TOKEN } } = dotenv.config();
 
 const { CronJob } = cron;
 const { Telegraf } = telegraf;
 
-const bot = new Telegraf(TOKEN);
+const bot = new Telegraf(process.env.TOKEN);
 
-const getWeather = () => Weather.getWeather(WEATHER_TOKEN);
+const getWeather = () => Weather.getWeather(process.env.WEATHER_TOKEN);
 const getRate = ({ from, to }) => Rates.getRate(from, to);
 
 bot.start((ctx) => {
