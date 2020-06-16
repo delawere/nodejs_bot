@@ -1,5 +1,5 @@
-const fetch = require('node-fetch');
-const setParams = require('../utils');
+import fetch from 'node-fetch';
+import setParams from '../utils.js';
 
 class Rates {
   static async getAllRates(currency = 'EUR') {
@@ -16,4 +16,4 @@ class Rates {
   }
 }
 
-module.exports = Rates;
+export default Rates;

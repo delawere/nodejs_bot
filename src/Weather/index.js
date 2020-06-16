@@ -1,5 +1,5 @@
-const fetch = require('node-fetch');
-const setParams = require('../utils');
+import fetch from 'node-fetch';
+import setParams from '../utils.js';
 
 class Weather {
   static async getWeather(token) {
@@ -49,4 +49,4 @@ class Weather {
 //   }
 }
 
-module.exports = Weather;
+export default Weather;

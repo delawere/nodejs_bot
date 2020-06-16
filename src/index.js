@@ -1,7 +1,7 @@
-const telegraf = require('telegraf');
-const cron = require('cron');
-const Rates = require('./Rates/index.js');
-const Weather = require('./Weather/index.js');
+import telegraf from 'telegraf';
+import cron from 'cron';
+import Rates from './Rates/index.js';
+import Weather from './Weather/index.js';
 
 const { CronJob } = cron;
 const { Telegraf } = telegraf;

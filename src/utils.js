@@ -5,4 +5,4 @@ const setParams = (urlString, params) => {
   return url;
 };
 
-module.exports = setParams;
+export default setParams;

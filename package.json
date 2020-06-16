@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "Daily Notification Bot on NodeJS",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "lint": "eslint '**/*.js'"
   },
   "engines": {
     "node": "14.4.0"
