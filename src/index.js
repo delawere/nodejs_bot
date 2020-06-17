@@ -11,16 +11,20 @@ expressApp.get('/', (_, res) => {
   res.send('I\'m alive!');
 });
 
+expressApp.get('/wakeup', (_, res) => {
+  res.send('I\'m alive!');
+});
+
 expressApp.listen(process.env.PORT, () => {
   console.log('Webpage for NodeJS Daily Bot listening on port 3000');
 });
 
 setTimeout(function wakeUp() {
-  fetch('https://nodejs-daily-bot.herokuapp.com/', () => {
+  fetch('https://nodejs-daily-bot.herokuapp.com/wakeup', () => {
     console.log('WAKE UP DYNO');
   });
-  return setTimeout(wakeUp, 300);
-}, 300);
+  return setTimeout(wakeUp, 1200000);
+}, 1200000);
 
 const { CronJob } = cron;
 const { Telegraf } = telegraf;
