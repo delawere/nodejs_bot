@@ -1,6 +1,7 @@
 import telegraf from 'telegraf';
 import cron from 'cron';
 import express from 'express';
+import fetch from 'node-fetch';
 import Rates from './Rates/index.js';
 import Weather from './Weather/index.js';
 
@@ -13,6 +14,13 @@ expressApp.get('/', (_, res) => {
 expressApp.listen(process.env.PORT, () => {
   console.log('Webpage for NodeJS Daily Bot listening on port 3000');
 });
+
+setTimeout(function wakeUp() {
+  fetch('https://nodejs-daily-bot.herokuapp.com/', () => {
+    console.log('WAKE UP DYNO');
+  });
+  return setTimeout(wakeUp, 300);
+}, 300);
 
 const { CronJob } = cron;
 const { Telegraf } = telegraf;
