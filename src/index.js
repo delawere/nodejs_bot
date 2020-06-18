@@ -15,7 +15,7 @@ expressApp.get('/wakeup', (_, res) => {
   res.send('I\'m alive!');
 });
 
-expressApp.listen(process.env.PORT, () => {
+expressApp.listen(3000, () => {
   console.log('Webpage for NodeJS Daily Bot listening on port 3000');
 });
 
@@ -29,14 +29,15 @@ setTimeout(function wakeUp() {
 const { CronJob } = cron;
 const { Telegraf } = telegraf;
 
-const bot = new Telegraf(process.env.TOKEN);
+const bot = new Telegraf('1040795017:AAFEZnfyP4-RsqlZWbXJl5UAOW-v0sRFmbg');
 
-const getWeather = () => Weather.getWeather(process.env.WEATHER_TOKEN);
+const getWeather = () => Weather.getWeather('905c7ffe3e2629ee95b7f5385c8237fb');
 const getRate = ({ from, to }) => Rates.getRate(from, to);
 
 bot.start((ctx) => {
+  ctx.reply('Starting!');
   const job = new CronJob(
-    '* */5 9-18 * * * *',
+    '0 20 10 * * *',
     async () => {
       const { description, temp, feelsLike } = await getWeather();
       const { first_name: username } = ctx.from;
