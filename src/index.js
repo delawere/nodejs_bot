@@ -21,7 +21,7 @@ app.listen(process.env.PORT, () => {
 });
 
 setTimeout(function wakeUp() {
-  fetch('https://nodejs-daily-bot.herokuapp.com/wakeup');
+  fetch('https://nodejs-daily-bot.herokuapp.com/wakeup', () => console.log('Ok!'));
   return setTimeout(wakeUp, HEROKU_EXPIRED);
 }, HEROKU_EXPIRED);
 
