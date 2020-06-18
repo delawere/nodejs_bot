@@ -36,7 +36,7 @@ const getRate = ({ from, to }) => Rates.getRate(from, to);
 
 bot.start((ctx) => {
   const job = new CronJob(
-    '33 39 * * * *',
+    '* 43 * * * *',
     async () => {
       const { description, temp, feelsLike } = await getWeather();
       const { first_name: username } = ctx.from;
