@@ -6,14 +6,14 @@ import _ from './env.js';
 import Bot from './Bot/index.js';
 
 const app = express();
-const HEROKU_EXPIRED = 1200000;
+const HEROKU_EXPIRED = 1000;
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(`${__dirname}/public/index.html`));
 });
 
-app.get('/wakeup', () => {
-  console.log("I'm alive");
+app.get('/wakeup', (req, res) => {
+  res.json({ status: 'UP' });
 });
 
 app.listen(process.env.PORT, () => {
