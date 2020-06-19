@@ -6,7 +6,7 @@ import _ from './env.js';
 import Bot from './Bot/index.js';
 
 const app = express();
-const HEROKU_EXPIRED = 1000;
+const HEROKU_EXPIRED = 1200000;
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(`${__dirname}/public/index.html`));
