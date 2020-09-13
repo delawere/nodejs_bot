@@ -19,7 +19,7 @@
     "dayjs": "^1.8.28",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "telegraf": "^3.38.0"
   },
   "devDependencies": {
