@@ -18,7 +18,7 @@
     "cron": "^1.8.2",
     "dayjs": "^1.8.28",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "node-fetch": "^2.6.0",
     "telegraf": "^3.38.0"
   },
